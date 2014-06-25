@@ -85,9 +85,7 @@
 			children = (
 				AA0868AD1959D4A50037FBA3 /* AppDelegate.swift */,
 				AA0C4DAA195A289B00363077 /* LeafAPI.swift */,
-				AA0868C81959E2AC0037FBA3 /* SwiftHMAC.swift */,
-				AA0868CB1959E2CE0037FBA3 /* HMAC.m */,
-				AA0868CD1959E3430037FBA3 /* HMAC.h */,
+				AA0868CE195B11A40037FBA3 /* HMAC */,
 				AA0868AF1959D4A50037FBA3 /* Images.xcassets */,
 				AA0868B11959D4A50037FBA3 /* MainMenu.xib */,
 				AA0868A91959D4A50037FBA3 /* Supporting Files */,
@@ -120,6 +118,16 @@
 				AA0868BD1959D4A50037FBA3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA0868CE195B11A40037FBA3 /* HMAC */ = {
+			isa = PBXGroup;
+			children = (
+				AA0868C81959E2AC0037FBA3 /* SwiftHMAC.swift */,
+				AA0868CB1959E2CE0037FBA3 /* HMAC.m */,
+				AA0868CD1959E3430037FBA3 /* HMAC.h */,
+			);
+			name = HMAC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

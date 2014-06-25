@@ -11,9 +11,14 @@ import Cocoa
 
 class LeafAPI {
     
+//    let YOUR_SITE_ID = "22" // Joe Fish
+//    let YOUR_KEY = "78C208F3-C0A8-4B0D-8741-A075BB6C003D" // Joe Fish
+    
     //let YOUR_APP_ID = 1
-    let YOUR_SITE_ID = "49"
-    let YOUR_KEY = "8BA1551A-EA07-404C-A50C-1A53ABCB9B3B" // Kafofo
+    let YOUR_SITE_ID = "23" // QA Fenway
+    let YOUR_KEY = "655559DE-4E2B-4D29-AF72-C078B456BCC0" // QA Fenway
+    
+    let BASE_URL = "http://api.leaftest.me"
     
     let hmac = SwiftHMAC()
     
@@ -24,7 +29,7 @@ class LeafAPI {
     }
     
     func heartbeat() {
-        var heartbeatUrl = NSURL(string: "https://api.leaf.me/heartbeat")
+        var heartbeatUrl = NSURL(string: "\(BASE_URL)/heartbeat")
     
         //println("Heartbeat")
     
@@ -41,7 +46,7 @@ class LeafAPI {
         //println("Heartbeat")
         
         var request = NSMutableURLRequest()
-        let urlStr = "https://api.leaf.me/heartbeat"
+        let urlStr = "http://api.leaftest.me/heartbeat"
         request.URL = NSURL(string: urlStr)
         request.HTTPMethod = "GET"
         
@@ -53,7 +58,7 @@ class LeafAPI {
     }
     
     func heartbeat2() {
-        var heartbeatUrl = NSURL(string: "https://api.leaf.me/heartbeat")
+        var heartbeatUrl = NSURL(string: "http://api.leaftest.me/heartbeat")
         
         //println("Heartbeat")
         var sessionConfig : NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -62,7 +67,7 @@ class LeafAPI {
         //[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         var request = NSMutableURLRequest()
-        let urlStr = "https://api.leaf.me/heartbeat"
+        let urlStr = "http://api.leaftest.me/heartbeat"
         request.URL = NSURL(string: urlStr)
         request.HTTPMethod = "GET"
         
@@ -80,9 +85,10 @@ class LeafAPI {
 //    }
     
     func users() {
-        let usersUrl = NSURL(string: "https://api.leaf.me/users?site_id=\(YOUR_SITE_ID)&per_page=10")
+        let usersUrl = NSURL(string: "http://api.leaftest.me/users?site_id=\(YOUR_SITE_ID)")
         
-        println("Getting users: \(usersUrl)")
+        
+        println("Getting users url: \(usersUrl)")
         
         //        var now = NSDate()
         //        var seconds = now.sec
@@ -96,48 +102,65 @@ class LeafAPI {
 //        
 //        let time = components.second
         
-        // Get Unix timestamp
-        let time = String(Int(NSDate().timeIntervalSince1970))
+        // Generate current Unix timestamp
+        //let time = String(Int(NSDate().timeIntervalSince1970))
+        
+        let time = 1403728841
         
         println("Seconds: \(time)")
         
         // Signature
         let signature = "\(time),GET,users,\(YOUR_SITE_ID)"
-        
-        var string :String = "Hello"
-        println("Hello as UTF8 \(string.utf8)")
-        var b : Array<Character>
-        
-        
-        
+
+        // Convert to NSData
         var keyData : NSData = YOUR_KEY.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
         var signatureData : NSData = signature.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
         
-        // Convert to bytes array
+        // Convert NSData to byte array
         var keyBytes = Byte[](count: keyData.length, repeatedValue:0)
         keyData.getBytes(&keyBytes)
         var signatureBytes = Byte[](count: signatureData.length, repeatedValue:0)
         signatureData.getBytes(&signatureBytes)
-        
-        
-        
+
         println("String to digest: \(signature)")
         
-        //var bytes = SwiftHMAC.calculate(HMACAlgorithm.SHA512, key: keyBytes, data: signatureBytes)
-        //SwiftHMAC.cal
-        var bytes : Byte[] = hmac.calculate(HMACAlgorithm.SHA512, key: keyBytes, data: signatureBytes)
+        // Generate authentication signature and encode it using the key provided by Leaf
+//        var hash : Byte[] = hmac.calculate(HMACAlgorithm.SHA512, key: keyBytes, data: signatureBytes)
         
-        println("result: \(bytes)")
+        var hash : NSData = hmac.calculateNS(HMACAlgorithm.SHA512, key: keyBytes, data: signatureBytes)
         
-        var sessionConfig : NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        var hashBytes = Byte[](count: keyData.length, repeatedValue:0)
+        hash.getBytes(&hashBytes)
+        
+        println("hmac result: \(hashBytes)")
+        
+        //var sessionConfig : NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         //sessionConfig.se
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(usersUrl) {(data, response, error) in
+        // Convert bytes to base 64
+        var encoded : NSString = hash.base64Encoding()
+        
+        println("encoded string: \(encoded)")
+        
+//        let task = NSURLSession.sharedSession().dataTaskWithURL(usersUrl) {(data, response, error) in
+//            println("Users result:")
+//            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+//        }
+//        
+//        task.resume()
+        
+        let usersRequest = NSMutableURLRequest(URL: usersUrl)
+        usersRequest.setValue(YOUR_SITE_ID, forHTTPHeaderField: "leaf-api-site-id")
+        usersRequest.setValue(String(time), forHTTPHeaderField: "leaf-api-timestamp")
+        usersRequest.setValue(encoded, forHTTPHeaderField: "leaf-api-signature-sha512")
+        
+        
+        let task2 = NSURLSession.sharedSession().dataTaskWithRequest(usersRequest) {(data, response, error) in
+            println("Users Result: ")
             println(NSString(data: data, encoding: NSUTF8StringEncoding))
         }
         
-        task.resume()
-        
+        task2.resume()
         
         
         

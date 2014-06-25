@@ -23,4 +23,14 @@ class SwiftHMAC
         return rawBytes
     }
     
+    func calculateNS(algorithm:HMACAlgorithm, key : Byte[], data : Byte[]) -> NSData
+    {
+        let computedHMAC = HMAC.calculateWithAlgorithm(algorithm, forKey: key, andData: data)
+        
+//        var rawBytes = Byte[](count: computedHMAC.length, repeatedValue: 0)
+//        computedHMAC.getBytes(&rawBytes)
+        
+        return computedHMAC
+    }
+    
 }

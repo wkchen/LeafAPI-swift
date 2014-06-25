@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         
         println("Heartbeat:")
-        leafAPI.heartbeat2()
+        leafAPI.heartbeat()
         
         NSThread.sleepForTimeInterval(2)
         
