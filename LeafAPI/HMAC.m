@@ -13,6 +13,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import "HMAC.h"
+#import "LeafAPI-Swift.h"
 
 @implementation HMAC
 

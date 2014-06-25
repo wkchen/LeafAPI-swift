@@ -13,7 +13,7 @@ class SwiftHMAC
 {
     // Swift will automatically pull the enum from Obj-C
     
-    func calculate(algorithm:HMACAlgorithm, key:Byte[], data:Byte[]) -> Byte[]
+    func calculate(algorithm:HMACAlgorithm, key : Byte[], data : Byte[]) -> Byte[]
     {
         let computedHMAC = HMAC.calculateWithAlgorithm(algorithm, forKey: key, andData: data)
         
@@ -22,4 +22,5 @@ class SwiftHMAC
         
         return rawBytes
     }
+    
 }
