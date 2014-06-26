@@ -34,6 +34,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uus-kx-7Ek">
+                                <rect key="frame" x="28" y="263" width="85" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Leaf API Test" id="TRs-cD-GQq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mik-ja-VlC">
                                 <rect key="frame" x="14" y="187" width="112" height="32"/>
                                 <buttonCell key="cell" type="push" title="Users" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oBz-Ce-yzq">
@@ -42,6 +50,16 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="usersButton:" target="XfG-lQ-9wD" id="cN7-0o-lSP"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laW-NJ-OGq">
+                                <rect key="frame" x="14" y="154" width="112" height="32"/>
+                                <buttonCell key="cell" type="push" title="Catalogs" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qxa-3j-jpm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="catalogsButton:" target="XfG-lQ-9wD" id="g1w-q2-gXX"/>
                                 </connections>
                             </button>
                             <scrollView ambiguous="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-fc-k8S">
@@ -82,14 +100,16 @@
                                     <action selector="heartbeatButton:" target="XfG-lQ-9wD" id="Wk7-N0-GyO"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uus-kx-7Ek">
-                                <rect key="frame" x="28" y="263" width="85" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Leaf API Test" id="TRs-cD-GQq">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-OA-0Qb">
+                                <rect key="frame" x="14" y="121" width="112" height="32"/>
+                                <buttonCell key="cell" type="push" title="Payments" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sgc-p4-Ehh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="paymentsButton:" target="XfG-lQ-9wD" id="3uk-0Y-zZq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="cWh-fc-k8S" firstAttribute="leading" secondItem="yUP-Qn-xEO" secondAttribute="trailing" constant="21" id="EU0-eH-Udd"/>

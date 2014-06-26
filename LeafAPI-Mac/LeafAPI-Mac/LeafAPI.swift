@@ -71,6 +71,22 @@ class LeafAPI {
         //callLeafAPI("users", id)
     }
     
+    func catalogs() {
+        callLeafAPI("catalogs")
+    }
+    
+    func catalogs(callback: (NSString) -> Void) {
+        callLeafAPIString("catalogs", callback: callback)
+    }
+    
+    func payments() {
+        callLeafAPI("payments")
+    }
+    
+    func payments(callback: (NSString) -> Void) {
+        callLeafAPIString("payments", callback: callback)
+    }
+    
     //, callback: (NSData, NSURLResponse, NSError) -> Void
     func callLeafAPI(endpoint: NSString) {
         let url = NSURL(string: "\(self.baseURL)/\(endpoint)?site_id=\(self.siteID)")

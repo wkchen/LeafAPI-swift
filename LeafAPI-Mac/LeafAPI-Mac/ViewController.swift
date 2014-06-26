@@ -36,6 +36,21 @@ class ViewController: NSViewController {
         self.leafAPI?.users(setText)
     }
     
+    @IBAction func catalogsButton(sender: AnyObject) {
+        println("Catalogs button")
+        responseText.string = ""
+        responseText.insertText("Getting Catalogs...\n")
+        self.leafAPI?.catalogs(setText)
+    }
+    
+    @IBAction func paymentsButton(sender: AnyObject) {
+        println("Payments button")
+        responseText.string = ""
+        responseText.insertText("Getting Payments...\n")
+        self.leafAPI?.payments(setText)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +78,8 @@ class ViewController: NSViewController {
     }
     
     func setText(txt: NSString) {
-        //var abc = NSJSONSerialization.dataWithJSONObject(txt, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
-        
         println("Setting text: \(txt)")
-        responseText.insertText(txt as NSString)
+        responseText.string = txt
     }
     
     func setTextJSON(d: NSString) {
