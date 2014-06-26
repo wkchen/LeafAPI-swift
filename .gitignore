@@ -6,3 +6,12 @@
 #
 # Pods/
 
+.Trashes
+*swp
+*.lock
+*~.nib
+DerivedData/
+build/
+
+LeafAPI-Mac/LeafAPI-Mac/Keys.plist
+Keys.plist
