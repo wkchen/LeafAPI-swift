@@ -63,6 +63,10 @@ class LeafAPI {
         callLeafAPI("users")
     }
     
+    func users(callback: (NSString) -> Void) {
+        callLeafAPIString("users", callback: callback)
+    }
+    
     func users(id: NSString) {
         //callLeafAPI("users", id)
     }
@@ -97,8 +101,7 @@ class LeafAPI {
         task.resume()
     }
     
-    //, callback: (NSData, NSURLResponse, NSError) -> Void
-    func callLeafAPIString(endpoint: NSString) {
+    func callLeafAPIString(endpoint: NSString, callback: (NSString) -> Void) {
         let url = NSURL(string: "\(self.baseURL)/\(endpoint)?site_id=\(self.siteID)")
         
         // Generate current Unix timestamp
@@ -118,10 +121,7 @@ class LeafAPI {
         
         // Execute query
         let task = NSURLSession.sharedSession().dataTaskWithRequest(usersRequest) {(data, response, error) in
-            println("Users Result: ")
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-            println()
-            //callback(data, response, error)
+            callback(NSString(data: data, encoding: NSUTF8StringEncoding))
         }
         
         task.resume()

@@ -9,7 +9,34 @@
 import Cocoa
 
 class ViewController: NSViewController {
-                            
+    
+    var leafAPI: LeafAPI?
+    
+    //@IBOutlet var responseText: NSTextView
+    @IBOutlet var scrollView: NSScrollView
+    
+    var responseText : NSTextView {
+    get {
+        return scrollView.contentView.documentView as NSTextView
+    }
+    }
+    
+    
+    @IBAction func heartbeatButton(sender: AnyObject) {
+        println("Heartbeat button")
+        responseText.string = ""
+        responseText.insertText("Getting Heartbeat...\n")
+        self.leafAPI?.heartbeat(setText)
+    }
+    
+    @IBAction func usersButton(sender: AnyObject) {
+        println("Users button")
+        responseText.string = ""
+        responseText.insertText("Getting Users...\n")
+        self.leafAPI?.users(setText)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,10 +46,13 @@ class ViewController: NSViewController {
         let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")
         let dict = NSDictionary(contentsOfFile: path)
         
-        println(dict.valueForKey("TEST_JOE_FISH_KEY"))
+        self.leafAPI = LeafAPI(
+            environment: LeafEnv.TEST,
+            siteID: dict.valueForKey("TEST_QA_FENWAY_SITEID") as NSString,
+            apiKey: dict.valueForKey("TEST_QA_FENWAY_KEY") as NSString)
         
-        
-                                    
+        self.leafAPI?.heartbeat()
+
     }
 
     override var representedObject: AnyObject? {
@@ -30,6 +60,21 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
                                     
+    }
+    
+    func setText(txt: NSString) {
+        //var abc = NSJSONSerialization.dataWithJSONObject(txt, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        
+        println("Setting text: \(txt)")
+        responseText.insertText(txt as NSString)
+    }
+    
+    func setTextJSON(d: NSString) {
+        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(d.dataUsingEncoding(NSUTF8StringEncoding), options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        
+        var str = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.PrettyPrinted, error: nil)
+        
+        
     }
 
 
