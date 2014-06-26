@@ -34,7 +34,7 @@ Then you can instantiate and use it:
 
     }
 
-In this example, test credentials are stored in a Keys.plist file (not synced to GitHub).  The format of the file is as follows:
+In this example, credentials are stored in a Keys.plist file (not synced to GitHub).  The format of the file is as follows:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
