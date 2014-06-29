@@ -21,7 +21,6 @@ class ViewController: NSViewController {
     }
     }
     
-    
     @IBAction func heartbeatButton(sender: AnyObject) {
         println("Heartbeat button")
         responseText.string = ""
@@ -50,6 +49,19 @@ class ViewController: NSViewController {
         self.leafAPI?.payments(setText)
     }
     
+    @IBAction func catalog38Button(sender: AnyObject) {
+        println("Catalog 38 button")
+        responseText.string = ""
+        responseText.insertText("Getting Payments...\n")
+        self.leafAPI?.callLeafAPICatalog("catalog_items", catalog_id: "38", setText)
+    }
+    
+    @IBAction func ordersButton(sender : AnyObject) {
+        println("Orders button")
+        responseText.string = ""
+        responseText.insertText("Getting Orders...\n")
+        self.leafAPI?.orders(setText)
+    }
     
     
     override func viewDidLoad() {
@@ -66,15 +78,16 @@ class ViewController: NSViewController {
             siteID: dict.valueForKey("TEST_QA_FENWAY_SITEID") as NSString,
             apiKey: dict.valueForKey("TEST_QA_FENWAY_KEY") as NSString)
         
-        self.leafAPI?.heartbeat()
+        //self.leafAPI?.heartbeat()
+        
+        self.leafAPI?.catalog38(setText)
 
     }
 
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
-        }
-                                    
+        }                       
     }
     
     func setText(txt: NSString) {
