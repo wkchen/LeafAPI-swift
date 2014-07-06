@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0C4E9B195CB6EB00363077 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E9A195CB6EB00363077 /* main.swift */; };
+		AA0C4E9D195CB6EB00363077 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E9C195CB6EB00363077 /* ViewController.swift */; };
+		AA0C4E9F195CB6EB00363077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4E9E195CB6EB00363077 /* AppDelegate.swift */; };
+		AA0C4EA1195CB6EB00363077 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4EA0195CB6EB00363077 /* Images.xcassets */; };
+		AA0C4EA4195CB6EB00363077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4EA2195CB6EB00363077 /* Main.storyboard */; };
+		AA0C4EB0195CB6EB00363077 /* LeafAPI_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4EAF195CB6EB00363077 /* LeafAPI_MacTests.swift */; };
+		AA0C4EBA195CB71C00363077 /* LeafAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4EB9195CB71C00363077 /* LeafAPI.swift */; };
+		AA0C4EBD195CB74500363077 /* HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4EBC195CB74500363077 /* HMAC.m */; };
+		AA0C4EC9195CBE3800363077 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA0C4EC8195CBE3800363077 /* Keys.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA0C4EAA195CB6EB00363077 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0C4E8D195CB6EB00363077 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0C4E94195CB6EB00363077;
+			remoteInfo = "LeafAPI-Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA0C4E95195CB6EB00363077 /* LeafAPI-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LeafAPI-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0C4E99195CB6EB00363077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0C4E9A195CB6EB00363077 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AA0C4E9C195CB6EB00363077 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA0C4E9E195CB6EB00363077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA0C4EA0195CB6EB00363077 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA0C4EA3195CB6EB00363077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA0C4EA9195CB6EB00363077 /* LeafAPI-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LeafAPI-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0C4EAE195CB6EB00363077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0C4EAF195CB6EB00363077 /* LeafAPI_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafAPI_MacTests.swift; sourceTree = "<group>"; };
+		AA0C4EB9195CB71C00363077 /* LeafAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafAPI.swift; sourceTree = "<group>"; };
+		AA0C4EBB195CB74400363077 /* LeafAPI-Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeafAPI-Mac-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA0C4EBC195CB74500363077 /* HMAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAC.m; sourceTree = "<group>"; };
+		AA0C4EBE195CB76400363077 /* HMAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMAC.h; sourceTree = "<group>"; };
+		AA0C4EC8195CBE3800363077 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Keys.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0C4E92195CB6EB00363077 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0C4EA6195CB6EB00363077 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0C4E8C195CB6EB00363077 = {
+			isa = PBXGroup;
+			children = (
+				AA0C4E97195CB6EB00363077 /* LeafAPI-Mac */,
+				AA0C4EAC195CB6EB00363077 /* LeafAPI-MacTests */,
+				AA0C4E96195CB6EB00363077 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0C4E96195CB6EB00363077 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4E95195CB6EB00363077 /* LeafAPI-Mac.app */,
+				AA0C4EA9195CB6EB00363077 /* LeafAPI-MacTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA0C4E97195CB6EB00363077 /* LeafAPI-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4EC8195CBE3800363077 /* Keys.plist */,
+				AA0C4EBF195CB76E00363077 /* LeafAPI */,
+				AA0C4E9C195CB6EB00363077 /* ViewController.swift */,
+				AA0C4E9E195CB6EB00363077 /* AppDelegate.swift */,
+				AA0C4EA0195CB6EB00363077 /* Images.xcassets */,
+				AA0C4EA2195CB6EB00363077 /* Main.storyboard */,
+				AA0C4E98195CB6EB00363077 /* Supporting Files */,
+				AA0C4EBB195CB74400363077 /* LeafAPI-Mac-Bridging-Header.h */,
+			);
+			path = "LeafAPI-Mac";
+			sourceTree = "<group>";
+		};
+		AA0C4E98195CB6EB00363077 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4E99195CB6EB00363077 /* Info.plist */,
+				AA0C4E9A195CB6EB00363077 /* main.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA0C4EAC195CB6EB00363077 /* LeafAPI-MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4EAF195CB6EB00363077 /* LeafAPI_MacTests.swift */,
+				AA0C4EAD195CB6EB00363077 /* Supporting Files */,
+			);
+			path = "LeafAPI-MacTests";
+			sourceTree = "<group>";
+		};
+		AA0C4EAD195CB6EB00363077 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4EAE195CB6EB00363077 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA0C4EBF195CB76E00363077 /* LeafAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4EB9195CB71C00363077 /* LeafAPI.swift */,
+				AA0C4ECA195CC0F100363077 /* HMAC */,
+			);
+			name = LeafAPI;
+			sourceTree = "<group>";
+		};
+		AA0C4ECA195CC0F100363077 /* HMAC */ = {
+			isa = PBXGroup;
+			children = (
+				AA0C4EBE195CB76400363077 /* HMAC.h */,
+				AA0C4EBC195CB74500363077 /* HMAC.m */,
+			);
+			name = HMAC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0C4E94195CB6EB00363077 /* LeafAPI-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0C4EB3195CB6EB00363077 /* Build configuration list for PBXNativeTarget "LeafAPI-Mac" */;
+			buildPhases = (
+				AA0C4E91195CB6EB00363077 /* Sources */,
+				AA0C4E92195CB6EB00363077 /* Frameworks */,
+				AA0C4E93195CB6EB00363077 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LeafAPI-Mac";
+			productName = "LeafAPI-Mac";
+			productReference = AA0C4E95195CB6EB00363077 /* LeafAPI-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA0C4EA8195CB6EB00363077 /* LeafAPI-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0C4EB6195CB6EB00363077 /* Build configuration list for PBXNativeTarget "LeafAPI-MacTests" */;
+			buildPhases = (
+				AA0C4EA5195CB6EB00363077 /* Sources */,
+				AA0C4EA6195CB6EB00363077 /* Frameworks */,
+				AA0C4EA7195CB6EB00363077 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA0C4EAB195CB6EB00363077 /* PBXTargetDependency */,
+			);
+			name = "LeafAPI-MacTests";
+			productName = "LeafAPI-MacTests";
+			productReference = AA0C4EA9195CB6EB00363077 /* LeafAPI-MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0C4E8D195CB6EB00363077 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = wkchen;
+				TargetAttributes = {
+					AA0C4E94195CB6EB00363077 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					AA0C4EA8195CB6EB00363077 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = AA0C4E94195CB6EB00363077;
+					};
+				};
+			};
+			buildConfigurationList = AA0C4E90195CB6EB00363077 /* Build configuration list for PBXProject "LeafAPI-Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA0C4E8C195CB6EB00363077;
+			productRefGroup = AA0C4E96195CB6EB00363077 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0C4E94195CB6EB00363077 /* LeafAPI-Mac */,
+				AA0C4EA8195CB6EB00363077 /* LeafAPI-MacTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA0C4E93195CB6EB00363077 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0C4EC9195CBE3800363077 /* Keys.plist in Resources */,
+				AA0C4EA1195CB6EB00363077 /* Images.xcassets in Resources */,
+				AA0C4EA4195CB6EB00363077 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0C4EA7195CB6EB00363077 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA0C4E91195CB6EB00363077 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0C4EBD195CB74500363077 /* HMAC.m in Sources */,
+				AA0C4E9F195CB6EB00363077 /* AppDelegate.swift in Sources */,
+				AA0C4E9D195CB6EB00363077 /* ViewController.swift in Sources */,
+				AA0C4EBA195CB71C00363077 /* LeafAPI.swift in Sources */,
+				AA0C4E9B195CB6EB00363077 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA0C4EA5195CB6EB00363077 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0C4EB0195CB6EB00363077 /* LeafAPI_MacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA0C4EAB195CB6EB00363077 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0C4E94195CB6EB00363077 /* LeafAPI-Mac */;
+			targetProxy = AA0C4EAA195CB6EB00363077 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA0C4EA2195CB6EB00363077 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA0C4EA3195CB6EB00363077 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA0C4EB1195CB6EB00363077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0C4EB2195CB6EB00363077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AA0C4EB4195CB6EB00363077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LeafAPI-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeafAPI-Mac/LeafAPI-Mac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA0C4EB5195CB6EB00363077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "LeafAPI-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeafAPI-Mac/LeafAPI-Mac-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		AA0C4EB7195CB6EB00363077 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeafAPI-Mac.app/Contents/MacOS/LeafAPI-Mac";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LeafAPI-MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		AA0C4EB8195CB6EB00363077 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LeafAPI-Mac.app/Contents/MacOS/LeafAPI-Mac";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "LeafAPI-MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA0C4E90195CB6EB00363077 /* Build configuration list for PBXProject "LeafAPI-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0C4EB1195CB6EB00363077 /* Debug */,
+				AA0C4EB2195CB6EB00363077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0C4EB3195CB6EB00363077 /* Build configuration list for PBXNativeTarget "LeafAPI-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0C4EB4195CB6EB00363077 /* Debug */,
+				AA0C4EB5195CB6EB00363077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AA0C4EB6195CB6EB00363077 /* Build configuration list for PBXNativeTarget "LeafAPI-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0C4EB7195CB6EB00363077 /* Debug */,
+				AA0C4EB8195CB6EB00363077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0C4E8D195CB6EB00363077 /* Project object */;
+}
