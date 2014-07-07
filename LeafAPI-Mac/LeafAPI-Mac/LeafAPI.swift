@@ -208,16 +208,42 @@ class LeafAPI {
         usersRequest.setValue(String(time), forHTTPHeaderField: "leaf-api-timestamp")
         usersRequest.setValue(hash, forHTTPHeaderField: "leaf-api-signature-sha512")
         
+        httpRequestWithCallback(usersRequest, callback: callback)
+    }
+    
+    func buildLeafAPIRequest(endpoint: NSString, args: NSDictionary) -> NSURLRequest {
+        
+        let url = NSURL(string: "\(self.baseURL)/\(endpoint)") // TODO - update this, need siteID, etc.
+        
+        println(url)
+        
+        // Generate current Unix timestamp
+        let time = String(Int(NSDate().timeIntervalSince1970))
+        
+        // Signature
+        let signature = "\(time),GET,\(endpoint),\(self.siteID)"
+        
+        // Calculate Base 64 encoded digest
+        let hash : NSString = HMAC.calculateSHA512Base64WithKey(self.apiKey, andData: signature)
+        
+        // Set headers in request
+        let req = NSMutableURLRequest(URL: url)
+        req.setValue(self.siteID, forHTTPHeaderField: "leaf-api-site-id")
+        req.setValue(String(time), forHTTPHeaderField: "leaf-api-timestamp")
+        req.setValue(hash, forHTTPHeaderField: "leaf-api-signature-sha512")
+        
+        return req
+    }
+
+    
+    // Helper method to execute request as NSURLSession
+    func httpRequestWithCallback(request: NSURLRequest, callback: (NSString) -> Void) {
         // Execute query
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(usersRequest) {(data, response, error) in
-            println("Arg Result: ")
-            //println(NSString(data: data, encoding: NSUTF8StringEncoding))
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {(data, response, error) in
             callback(NSString(data: data, encoding: NSUTF8StringEncoding))
         }
         
         task.resume()
     }
-    
-    
     
 }
