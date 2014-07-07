@@ -6,8 +6,6 @@
 #
 # Pods/
 
-<<<<<<< HEAD
-=======
 .Trashes
 *swp
 *.lock
@@ -17,4 +15,4 @@ build/
 
 LeafAPI-Mac/LeafAPI-Mac/Keys.plist
 Keys.plist
->>>>>>> FETCH_HEAD
+

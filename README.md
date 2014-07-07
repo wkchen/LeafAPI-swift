@@ -1,7 +1,5 @@
 LeafAPI-swift
 =============
-<<<<<<< HEAD
-=======
 
 Swift wrapper for the Leaf API, demonstrating support for both Test and Production environments, as well as the HMAC based authentication scheme.  HMAC is currently not suppored in Swift, so it is bridged from Objective C.
 
@@ -52,4 +50,3 @@ In this example, credentials are stored in a Keys.plist file (not synced to GitH
         <string>xxxxx-xxx-xxxx</string>
     </dict>
     </plist>
->>>>>>> FETCH_HEAD
