@@ -16,37 +16,38 @@ First, declare an instance of LeafAPI:
     var leafAPI: LeafAPI?
     
 Then you can instantiate and use it:
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
         
-        let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")
-        let dict = NSDictionary(contentsOfFile: path)
+    let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")
+    let dict = NSDictionary(contentsOfFile: path)
         
-        self.leafAPI = LeafAPI(
-            environment: LeafEnv.TEST,
-            siteID: dict.valueForKey("TEST_QA_FENWAY_SITEID") as NSString,
-            apiKey: dict.valueForKey("TEST_QA_FENWAY_KEY") as NSString)
+    self.leafAPI = LeafAPI(
+        environment: LeafEnv.TEST,
+        siteID: dict.valueForKey("TEST_QA_FENWAY_SITEID") as NSString,
+        apiKey: dict.valueForKey("TEST_QA_FENWAY_KEY") as NSString)
         
-        self.leafAPI?.heartbeat()
+    self.leafAPI?.heartbeat()
 
-    }
-
+}
+```
 In this example, credentials are stored in a Keys.plist file (not synced to GitHub).  The format of the file is as follows:
-
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-    <dict>
-        <key>TEST_QA_FENWAY_SITEID</key>
-        <string>xx</string>
-        <key>TEST_QA_FENWAY_KEY</key>
-        <string>xxxxx-xxxx-xxxx</string>
-        <key>TEST_JOE_FISH_SITEID</key>
-        <string>xx</string>
-        <key>TEST_JOE_FISH_KEY</key>
-        <string>xxxxx-xxx-xxxx</string>
-    </dict>
-    </plist>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>TEST_QA_FENWAY_SITEID</key>
+    <string>xx</string>
+    <key>TEST_QA_FENWAY_KEY</key>
+    <string>xxxxx-xxxx-xxxx</string>
+    <key>TEST_JOE_FISH_SITEID</key>
+    <string>xx</string>
+    <key>TEST_JOE_FISH_KEY</key>
+    <string>xxxxx-xxx-xxxx</string>
+</dict>
+</plist>
+```
